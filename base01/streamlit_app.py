@@ -5,8 +5,18 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
+st.set_page_config(
+    page_title="自定義網頁標題",
+    page_icon="random",
+    layout="centered",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': 'https://blog.jiatool.com/about/',
+        'About': "# 這是什麼網頁？ \n**[IT空間](https://blog.jiatool.com/)** 示範 streamlit 之用網頁"
+    }
+)
 
-st.title('我的第一個應用程式')
+# st.title('我的第一個應用程式')
 
 # st.write("嘗試創建**表格**:")
 
@@ -43,9 +53,9 @@ option =st.sidebar.selectbox(
     ['狗','貓','鸚鵡','天竺鼠'])    
 st.sidebar.text(f"你的答案:{option}")    
 
-left_column,right_column=st.columns(2)
-left_column.write("這是左邊欄位")
-right_column.write("這是右邊欄位")
+# left_column,right_column=st.columns(2)
+# left_column.write("這是左邊欄位")
+# right_column.write("這是右邊欄位")
 
 
 expander=st.expander("點擊來展開...")
@@ -79,4 +89,33 @@ expander.write("如果你要顯示很多文字，但又不想佔大半空間，�
 
 # st.balloons()
 
-st.snow()
+# st.snow()
+
+# with st.chat_message("user"):#  或者寫 "human" 
+#     st.write("Hi 👋，請問你是誰？")
+
+#另一種寫法
+# message=st.chat_message("assistant") #或者寫"ai"
+# # message=st.chat_message("assistant",avatar="🦖")  # 自訂頭像
+# message.write("你好！我是ChatBot 🤖，可以回答各種問題，提供資訊")
+# message.write("有什麼我可以幫助你的嗎?")
+
+# st.chat_input("Say something...")
+
+# with st.form(key='my_form'):
+#     form_name=st.text_input(label='姓名',placeholder='請輸入姓名')
+#     form_gender= st.selectbox('性別',['男','女','其它'])
+#     form_birthday=st.date_input("生日")
+#     submit_button= st.form_submit_button(label='Submit')
+
+# if submit_button:
+#     st.write(f"hello {form_name},性別:{form_gender},生日:{form_birthday}")
+
+# @st.cache_data(ttl=3600,show_spinner="正在加載資料…") # 👈 Add the caching decorator
+# def load_data(url):
+#     df=pd.read_csv(url)
+#     return df
+    
+# df=load_data("https://raw.githubusercontent.com/plotly/datasets/master/26k-consumer-complaints.csv")    
+# st.dataframe(df)
+
