@@ -1,0 +1,22 @@
+[project]
+authors = [
+  {name = "ttom921", email = "ttom921@hotmail.com"},
+]
+dependencies = ["pendulum (>=3.0.0,<4.0.0)"]
+description = ""
+name = "day03"
+readme = "README.md"
+requires-python = ">=3.12"
+version = "0.1.0"
+
+[tool.poetry]
+packages = [{include = "day03", from = "src"}]
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+
+[tool.poetry.dependencies]
+python = ">=3.12.*"
+[poetry.group.dev.dependencies]
+python = ">=3.12.*"
